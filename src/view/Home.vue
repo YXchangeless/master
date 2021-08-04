@@ -4,7 +4,7 @@
     <!-- <Sub></Sub> -->
     <Table :tableData="tableData" @ss="getss">
       <template slot="header">
-        <el-row>
+        <el-row style="padding: 10px 0;">
           <el-col :span="6">
             <el-select v-model="value" placeholder="请选择">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
@@ -25,6 +25,7 @@
           </el-col>
           <el-col :span="6">
             <el-button type="primary" @click="ss">查询</el-button>
+            <el-button type="info" @click="reset">重置</el-button>
           </el-col>
         </el-row>
       </template>
