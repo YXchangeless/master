@@ -14,12 +14,17 @@
     <!-- 主体 -->
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside width="200px">
+      <el-aside :width="collapse ? '64px' : '200px'">
+        <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单区域 -->
         <el-menu
           background-color="#333744"
           text-color="#fff"
           active-text-color="#409EFF"
+          :unique-opened="true"
+          :collapse="collapse"
+          :collapse-transition="false"
+          :router="true"
         >
           <el-submenu index="2">
             <!-- 一级菜单 -->
@@ -27,7 +32,7 @@
               <i class="el-icon-user-solid"></i>
               <span>用户管理</span>
             </template>
-            <el-menu-item index="3">用户列表</el-menu-item>
+            <el-menu-item index="/User">用户列表</el-menu-item>
           </el-submenu>
            <el-submenu index="4">
             <!-- 一级菜单 -->
@@ -35,7 +40,7 @@
               <i class="el-icon-user-solid"></i>
               <span>用户管理</span>
             </template>
-            <el-menu-item index="5">用户列表</el-menu-item>
+            <el-menu-item index="/login">用户列表</el-menu-item>
           </el-submenu>
           <el-menu-item index="6">
             <i class="el-icon-setting"></i>
@@ -44,7 +49,9 @@
         </el-menu>
       </el-aside>
       <!-- 内容 -->
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -64,11 +71,17 @@ export default {
     Table,
   },
   data() {
-    return {}
+    return {
+      collapse:false,
+    }
   },
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    toggleCollapse() {
+      this.collapse = !this.collapse
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -97,8 +110,20 @@ export default {
 }
 .el-aside {
   background-color: #333744;
+  .el-menu {
+    border-right: 0;
+  }
 }
 .el-main {
   background-color: #eaedf1;
+}
+.toggle-button {
+  background-color: #4A5064;
+  font-size: 10px;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.2em;
+  cursor: pointer;
 }
 </style>
