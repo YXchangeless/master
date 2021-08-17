@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '../view/Login.vue'
 import Home from '../view/Home.vue'
 import User from '../view/User.vue'
+import lifeCycle from '../view/Vue/lifeCycle.vue'
 import Welcome from '@/components/welcome.vue'
 
 Vue.use(Router)
@@ -19,6 +20,7 @@ export default new Router({
       children:[
         {path:'/Welcome',component:Welcome},
         {path:'/User',component:User},
+        {path:'/lifeCycle',component:lifeCycle},
       ]},
   ]
 })

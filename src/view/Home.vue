@@ -9,7 +9,7 @@
         />
         <span>后台管理系统</span>
       </div>
-      <el-button type="info">退出</el-button>
+      <el-button type="info" @click="exit">退出</el-button>
     </el-header>
     <!-- 主体 -->
     <el-container>
@@ -30,8 +30,9 @@
             <!-- 一级菜单 -->
             <template slot="title">
               <i class="el-icon-user-solid"></i>
-              <span>用户管理</span>
+              <span>VUE资料库</span>
             </template>
+            <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
             <el-menu-item index="/User">用户列表</el-menu-item>
           </el-submenu>
            <el-submenu index="4">
@@ -58,18 +59,11 @@
 
 <script>
 import Input from '../components/input.vue'
-// import Add from '../components/add.vue'
-// import Add from '@/components/add.vue'
 import Sub from '../components/sub.vue'
 import Table from '../components/table.vue'
 export default {
   name: 'demo',
-  components: {
-    Input,
-    // Add,
-    Sub,
-    Table,
-  },
+  components: {},
   data() {
     return {
       collapse:false,
@@ -80,6 +74,9 @@ export default {
   methods: {
     toggleCollapse() {
       this.collapse = !this.collapse
+    },
+    exit() {
+      this.$router.push({ path:'/login'})
     },
   },
 }
