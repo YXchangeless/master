@@ -58,9 +58,7 @@
 </template>
 
 <script>
-import Input from '../components/input.vue'
-import Sub from '../components/sub.vue'
-import Table from '../components/table.vue'
+let aa
 export default {
   name: 'demo',
   components: {},
