@@ -19,9 +19,7 @@
 
     </div>
 </template>
-<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 <script>
-    import axios from 'axios';
     import Children from '../components/children.vue'
     export default {
         components: {
@@ -36,10 +34,10 @@
         },
         methods: {
             test() {
-                axios
+                this.$axios
                     .get('https://api.apiopen.top/getJoke?page=1&count=2&type=video')
                     .then(response => (console.log(response)))
-                    .catch(function (error) { // 请求失败处理
+                    .catch(function (error) {
                         console.log(error);
                     });
             },
