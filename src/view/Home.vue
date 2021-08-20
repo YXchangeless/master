@@ -33,7 +33,7 @@
               <span>VUE资料库</span>
             </template>
             <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
-            <el-menu-item index="/User">用户列表</el-menu-item>
+            <el-menu-item index="/User">Vue实例</el-menu-item>
           </el-submenu>
            <el-submenu index="4">
             <!-- 一级菜单 -->
