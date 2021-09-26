@@ -9,7 +9,7 @@ import Welcome from '@/components/welcome.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash', // 嘻哈模式
   routes: [
     {path:'/',redirect:'login'},
     {path:'/login',component:Login},
