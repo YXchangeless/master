@@ -4,6 +4,7 @@ import Login from '../view/Login.vue'
 import Home from '../view/Home.vue'
 import User from '../view/User.vue'
 import lifeCycle from '../view/Vue/lifeCycle.vue'
+import Echarts from '../view/Vue/Echarts.vue'
 import Welcome from '@/components/welcome.vue'
 
 Vue.use(Router)
@@ -21,6 +22,7 @@ export default new Router({
         {path:'/Welcome',component:Welcome},
         {path:'/User',component:User},
         {path:'/lifeCycle',component:lifeCycle},
+        {path:'/Echarts',component:Echarts},
       ]},
   ]
 })
