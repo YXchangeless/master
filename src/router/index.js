@@ -4,7 +4,7 @@ import Login from '../view/Login.vue'
 import Home from '../view/Home.vue'
 import User from '../view/User.vue'
 import lifeCycle from '../view/Vue/lifeCycle.vue'
-import Echarts from '../view/Vue/Echarts.vue'
+import Echarts from '../view/Echarts.vue'
 import Welcome from '@/components/welcome.vue'
 
 Vue.use(Router)
