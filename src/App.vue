@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  // import globle from './assets/css/globle.css'
   export default {
     name: 'App',
     mounted() {

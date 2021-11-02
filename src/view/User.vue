@@ -19,11 +19,10 @@
             <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
             </el-switch>
         </el-card>
-        <el-tree :data="data" show-checkbox node-key="code" :default-expand-all="true" :default-checked-keys="show"
-            :props="defaultProps">
-        </el-tree>
         <el-button @click="addId(treeData)">addId</el-button>
-    </div>
+        <el-button @click="ss($event)">点击事件</el-button>
+
+        </div>
 </template>
 <script>
     import Children from '../components/children.vue'
@@ -47,6 +46,10 @@
         created() {
         },
         methods: {
+            ss(e){
+                console.log(e)
+                console.log(e.event_prop)
+            },
             a(val) {
                 console.log(val)
             },
