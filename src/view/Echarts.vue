@@ -1,12 +1,17 @@
 <template>
     <div class="main">
-        <div id="echarts" style="width: 600px;height:400px;"></div>
+        <div style="width: 50%;">
+            <div id="echarts" style="width: 100%;height:400px;border: 1px solid #ddd;"></div>
+        </div>
+        <el-button @click="a">123</el-button>
     </div>
 </template>
 <script>
+    import { sum } from './sum.js'
     export default {
         data() {
             return {
+                collapse: Boolean,
                 option: {
                     xAxis: {
                         type: 'category',
@@ -26,6 +31,8 @@
         beforeCreate() {
         },
         created() {
+            this.ss()
+            this.collapse = this.$store.state.collapse
         },
         // 模板已经再内存中编译完成，但是没有把模板渲染到页面中
         beforeMount() {
@@ -35,11 +42,30 @@
         mounted() {
             this.ss()
         },
+        watch: {
+            "$store.state.collapse"() {
+                setTimeout(() => {
+                    this.chart.resize()
+                }, 300)
+            }
+        },
         methods: {
             ss() {
                 var myChart = this.$echarts.init(document.getElementById('echarts'));
                 myChart.setOption(this.option);
-            }
+                setTimeout(function () {
+                    window.onresize = function () {
+                        myChart.resize();
+                    }
+                }, 200)
+            },
+            a() {
+                var myChart = this.$echarts.init(document.getElementById('echarts'));
+                myChart.setOption(this.option);
+                window.onresize = function () {
+                    myChart.resize();
+                }
+            },
         }
 
     }

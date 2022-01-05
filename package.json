@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "angular-expressions": "^1.1.2",
+    "ant-design-vue": "^1.7.8",
     "axios": "^0.21.0",
     "docxtemplater": "^3.19.9",
     "docxtemplater-image-module-free": "^1.1.1",

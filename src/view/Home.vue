@@ -35,6 +35,8 @@
             <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
             <el-menu-item index="/User">Vue实例</el-menu-item>
             <el-menu-item index="/Echarts">Echarts</el-menu-item>
+             <el-menu-item index="/VueX">VUEX</el-menu-item>
+             <el-menu-item index="/Index">baby</el-menu-item>
           </el-submenu>
            <el-submenu index="4">
             <!-- 一级菜单 -->
@@ -65,13 +67,16 @@ export default {
   components: {},
   data() {
     return {
-      collapse:false,
+      collapse: Boolean,
     }
   },
-  created() {},
+  created() {
+    this.collapse = this.$store.state.collapse
+  },
   mounted() {},
   methods: {
     toggleCollapse() {
+      console.log(this.collapse)
       this.collapse = !this.collapse
     },
     exit() {
