@@ -8,6 +8,9 @@ export default new Vuex.Store({
       collapse:false,
     },
     mutations: {
+      changeValue(state,newVal){
+        state.collapse = newVal
+      },
         add(state) {
           state.count++
         },
@@ -15,5 +18,9 @@ export default new Vuex.Store({
           state.difference--
         }
     },
+    // mutations:{
+    //   changeValue(state,newVal){
+    //   state.value=newVal
+    //   }
     actions: {}
   })

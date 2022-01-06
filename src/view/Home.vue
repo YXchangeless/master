@@ -78,6 +78,7 @@ export default {
     toggleCollapse() {
       console.log(this.collapse)
       this.collapse = !this.collapse
+      this.$store.commit('changeValue',this.collapse)
     },
     exit() {
       this.$router.push({ path:'/login'})

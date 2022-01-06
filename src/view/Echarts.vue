@@ -33,6 +33,7 @@
         created() {
             this.ss()
             this.collapse = this.$store.state.collapse
+            console.log(this.collapse + 'uuuuuuuuuuuuuu')
         },
         // 模板已经再内存中编译完成，但是没有把模板渲染到页面中
         beforeMount() {
@@ -45,7 +46,8 @@
         watch: {
             "$store.state.collapse"() {
                 setTimeout(() => {
-                    this.chart.resize()
+                    var myChart = this.$echarts.init(document.getElementById('echarts'));
+                    myChart.resize()
                 }, 300)
             }
         },
