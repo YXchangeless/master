@@ -6,6 +6,10 @@
                 <el-col :span="12">
                     <el-table :data="tableData" border style="width: 100%">
                         <el-table-column prop="date" label="钩子函数" align="center">
+                            <template slot-scope="scope">
+                                <div>是：{{scope.row.a}}</div>
+                                <div>说：{{scope.row.b}}</div> 
+                            </template>
                         </el-table-column>
                         <el-table-column prop="name" label="解释说明" align="center">
                         </el-table-column>
@@ -50,18 +54,26 @@
                 tableData: [{
                     date: 'beforeCreate',
                     name: 'data和methods中的数据都还没有初始化',
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    address: '上海市普陀区金沙江路 1518 弄',
+                    a: 'a',
+                    b: 'b',
                 }, {
                     date: 'created',
                     name: '如果要调用methods中的方法或者操作data中的数据，最早只能再created中操作',
-                    address: '上海市普陀区金沙江路 1517 弄'
+                    address: '上海市普陀区金沙江路 1517 弄',
+                    a: 'a',
+                    b: 'b',
                 }, {
                     date: 'beforeMount',
                     name: '模板已经再内存中编译完成，但是没有把模板渲染到页面中,此时页面中数据还是之前的',
-                    address: '上海市普陀区金沙江路 1519 弄'
+                    address: '上海市普陀区金沙江路 1519 弄',
+                    a: 'a',
+                    b: 'b',
                 }, {
                     date: 'beforeMount',
                     name: '内存中的模板已经真实的挂载到页面中',
+                    a: 'a',
+                    b: 'b',
                 }]
             }
         },

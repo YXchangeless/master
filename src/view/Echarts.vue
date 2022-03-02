@@ -4,6 +4,9 @@
             <div id="echarts" style="width: 100%;height:400px;border: 1px solid #ddd;"></div>
         </div>
         <el-button @click="a">123</el-button>
+        <div class="f">
+            <div class="h">112</div>
+        </div>
     </div>
 </template>
 <script>
@@ -62,16 +65,19 @@
                 }, 200)
             },
             a() {
-                var myChart = this.$echarts.init(document.getElementById('echarts'));
-                myChart.setOption(this.option);
-                window.onresize = function () {
-                    myChart.resize();
-                }
+                this.$confirm('是否要删除', '提示', { closeOnClickModal: false }).then(() => {
+                    this.$message.success('删除成功')
+                })
+
             },
         }
 
     }
 </script>
 <style scoped>
-
+.f {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #000;
+}
 </style>
