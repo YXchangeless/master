@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       loginFrom: {
-          userName: 'admin',
-          userPwd:'admin',
+          userName: '',
+          userPwd:'',
         },
         loginRules: {
           userName: [

@@ -77,6 +77,9 @@
                 }]
             }
         },
+        activated(){
+            
+        },
         // 实例完全被创建出来之前
         beforeCreate() {
         },

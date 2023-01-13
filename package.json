@@ -23,6 +23,7 @@
     "file-saver": "^2.0.5",
     "jszip": "^3.5.0",
     "jszip-utils": "^0.1.0",
+    "mockjs": "^1.1.0",
     "node-sass": "^4.14.1",
     "pizzip": "^3.0.6",
     "ts-loader": "^9.2.2",

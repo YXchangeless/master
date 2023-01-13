@@ -9,7 +9,9 @@ export default new Vuex.Store({
     },
     mutations: {
       changeValue(state,newVal){
+        console.log(state.collapse + '11111111')
         state.collapse = newVal
+        console.log(newVal + '2222')
       },
         add(state) {
           state.count++
