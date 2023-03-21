@@ -8,13 +8,14 @@ const service = axios.create({
     // baseURL: config.APi,
     // http://jsonplaceholder.typicode.com/api
     // baseURL: 'http://jsonplaceholder.typicode.com',
-    timeout: 300000
+    timeout: 10000
 })
 
 // 请求之前
 service.interceptors.request.use(res=> {
-
-    return res
+    return res;
+},function(error) {
+    return Promise.reject(error)
 })
 
 // 请求之后
