@@ -8,7 +8,7 @@
 </template>
 <script>
 import axios from 'axios'
-import mock from'../api/mock.js'
+// import mock from'../api/mock.js'
 export default {
   data() {
     return {}
@@ -33,7 +33,7 @@ export default {
           })
       },
       getMock(){
-       console.log(mock)
+       console.log(this.$api.mock.getList())
       },
   },
 }
