@@ -29,8 +29,22 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
 import './api/mock'
+import Cookie from 'js-cookie'
+Vue.prototype.$Cookie = Cookie
+
 
 Vue.config.productionTip = false
+
+router.beforeEach((to,from,next)=> {
+  const token = Cookie.get('token')
+  if(!token && to.name !== 'login') {
+    next({name:'login'})
+  } else if (token && to.name == 'login') {
+    next({name:'home'})
+  } else {
+    next()
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

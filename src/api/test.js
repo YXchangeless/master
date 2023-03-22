@@ -13,6 +13,13 @@ export default {
         url: '/api/home/getData',
         method: 'post',
         data
-    })
+      })
+    },
+    getLogin(data) {
+      return request({
+        url: '/api/login',
+        method: 'post',
+        data
+      })
     },
 }

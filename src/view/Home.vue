@@ -80,7 +80,8 @@ export default {
       this.collapse = !this.collapse
       this.$store.commit('changeValue',this.collapse)
     },
-    exit() {
+    exit() {     
+      this.$Cookie.remove('token')
       this.$router.push({ path:'/login'})
     },
   },

@@ -24,12 +24,14 @@
   </div>
 </template>
 <script>
+import Mock from 'mockjs'
+import Cookie from 'js-cookie'
 export default {
   data() {
     return {
       loginFrom: {
-          userName: '',
-          userPwd:'',
+          userName: 'admin',
+          userPwd:'admin',
         },
         loginRules: {
           userName: [
@@ -52,10 +54,17 @@ export default {
         this.$refs.loginRef.validate(async valid=>{
           if(!valid) return this.$message.error("登录失败");
           else{
-            console.log("登录成功");
-            this.$message.success("登录成功");
-            window.sessionStorage.setItem("token",this.token);
-            this.$router.push("/home");
+            // 
+            const token = Mock.Random.guid()
+            Cookie.set('token',token)
+            this.$api.test.getLogin(this.loginFrom).then(res=> {
+              console.log(res)
+              if(res.code == 200) {
+                this.$router.push("/home");
+              } else {
+                this.$message.error(res.msg || '登陆失败！');
+              }
+            })
           }
           console.log(valid);
         })

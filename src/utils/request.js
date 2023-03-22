@@ -20,7 +20,7 @@ service.interceptors.request.use(res=> {
 
 // 请求之后
 service.interceptors.response.use(res=> {
-    // const { code, data, msg, status } = res.data
+    const { code, data, msg, status } = res.data
     console.log(res.status)
     if(res.status == 200) {
         Message({

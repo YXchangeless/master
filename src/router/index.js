@@ -15,9 +15,10 @@ export default new Router({
   mode: 'hash', // 嘻哈模式
   routes: [
     {path:'/',redirect:'login'},
-    {path:'/login',component:Login},
+    {path:'/login',name: 'login',component:Login},
     {
       path:'/home',
+      name: 'home',
       component:Home,
       redirect:'/Welcome',
       children:[
