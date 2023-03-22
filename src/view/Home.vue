@@ -35,10 +35,10 @@
             <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
             <el-menu-item index="/User">Vue实例</el-menu-item>
             <el-menu-item index="/Echarts">Echarts</el-menu-item>
-             <el-menu-item index="/VueX">VUEX</el-menu-item>
-             <el-menu-item index="/Index">requset</el-menu-item>
+            <el-menu-item index="/VueX">VUEX</el-menu-item>
+            <el-menu-item index="/Index">requset</el-menu-item>
           </el-submenu>
-           <el-submenu index="4">
+          <el-submenu index="4">
             <!-- 一级菜单 -->
             <template slot="title">
               <i class="el-icon-user-solid"></i>
@@ -78,55 +78,56 @@ export default {
     toggleCollapse() {
       console.log(this.collapse)
       this.collapse = !this.collapse
-      this.$store.commit('changeValue',this.collapse)
+      this.$store.commit('changeValue', this.collapse)
     },
-    exit() {     
+    exit() {
       this.$Cookie.remove('token')
-      this.$router.push({ path:'/login'})
+      this.$router.push({ path: '/login' })
     },
   },
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .container {
   height: 100%;
-}
-.img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-.el-header {
-  background-color: #373d41;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  font-size: 20px;
-  div {
+  .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .el-header {
+    background-color: #373d41;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    span {
-      margin-left: 15px;
+    color: #fff;
+    font-size: 20px;
+    div {
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 15px;
+      }
     }
   }
-}
-.el-aside {
-  background-color: #333744;
-  .el-menu {
-    border-right: 0;
+  .el-aside {
+    background-color: #333744;
+    overflow:visible;
+    .el-menu {
+      border-right: 0;
+    }
   }
-}
-.el-main {
-  background-color: #eaedf1;
-}
-.toggle-button {
-  background-color: #4A5064;
-  font-size: 10px;
-  line-height: 24px;
-  color: #fff;
-  text-align: center;
-  letter-spacing: 0.2em;
-  cursor: pointer;
+  .el-main {
+    background-color: #eaedf1;
+  }
+  .toggle-button {
+    background-color: #4a5064;
+    font-size: 10px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+  }
 }
 </style>

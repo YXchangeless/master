@@ -24,7 +24,7 @@ service.interceptors.response.use(res=> {
     console.log(res.status)
     if(res.status == 200) {
         Message({
-            message: 'success',
+            message: data.msg,
             type: 'success',
         })
         return data
