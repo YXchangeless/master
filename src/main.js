@@ -32,11 +32,22 @@ import './api/mock'
 import Cookie from 'js-cookie'
 Vue.prototype.$Cookie = Cookie
 
+import { Message } from 'element-ui'
+
 
 Vue.config.productionTip = false
 
 router.beforeEach((to,from,next)=> {
-  const token = Cookie.get('token')
+  let token = Cookie.get('token')
+   // 获取存储token的开始时间
+   const tokenStartTime = window.localStorage.getItem('tokenStartTime')
+   const timeOver = 60 * 60000
+   // 当前时间
+  let date = new Date().getTime()
+  if(date - tokenStartTime > timeOver) {
+    token = ''
+    Message.error('登录已过期，请重新登录！');
+  }
   if(!token && to.name !== 'login') {
     next({name:'login'})
   } else if (token && to.name == 'login') {
