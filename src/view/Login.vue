@@ -58,10 +58,10 @@ export default {
             const token = Mock.Random.guid()
             Cookie.set('token',token)
             // 存储token开始时间
-            window.localStorage.setItem('tokenStartTime',new Date().getTime())
             this.$api.test.getLogin(this.loginFrom).then(res=> {
               console.log(res)
               if(res.code == 200) {
+                window.localStorage.setItem('tokenStartTime',new Date().getTime())
                 this.$router.push("/home");
               } else {
                 this.$message.error(res.msg || '登陆失败！');

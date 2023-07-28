@@ -1,9 +1,7 @@
-let obj = {id:1}
-console.log(obj ?. obj.id)
-
-let customer = {
-    name: "Carl",
-    details: { age: 82 }
-  };
-  let customerCity = customer?.city ?? "暗之城";
-  console.log(customerCity); // “暗之城”  
+let form = {
+  a: '',
+  b: ''
+}
+let obj = {a:'1',b:'2'}
+form = {...obj}
+console.log('form',form);

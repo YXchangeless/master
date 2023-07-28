@@ -4,7 +4,8 @@ import { MessageBox, Message } from 'element-ui'
 
 // http://localhost:8080
 const service = axios.create({
-    baseURL: 'http://localhost:8080',
+    // baseURL: 'http://localhost:8080',
+    baseURL: 'https://www.fastmock.site/mock/69fdb9c588cfb3e4f3d5a12804458003/manage',
     // baseURL: config.APi,
     // http://jsonplaceholder.typicode.com/api
     // baseURL: 'http://jsonplaceholder.typicode.com',

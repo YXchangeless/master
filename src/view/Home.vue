@@ -30,11 +30,11 @@
             <!-- 一级菜单 -->
             <template slot="title">
               <i class="el-icon-user-solid"></i>
-              <span>VUE资料库</span>
+              <span>组件库</span>
             </template>
             <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
             <el-menu-item index="/User">Vue实例</el-menu-item>
-            <el-menu-item index="/Echarts">Echarts</el-menu-item>
+            <el-menu-item index="/Echarts">Echarts库</el-menu-item>
             <el-menu-item index="/VueX">VUEX</el-menu-item>
             <el-menu-item index="/Index">requset</el-menu-item>
           </el-submenu>

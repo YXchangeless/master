@@ -1,18 +1,6 @@
 <template>
-  <div class="main">
-    <el-row>
-      <el-input v-model="input" placeholder="请输入内容"></el-input>
-    </el-row>
-    <el-row>
-      <el-button @click="sd()">新增</el-button>
-    </el-row>
-    <el-row v-for="(item,index) in inputArr" :key="index">
-      <span v-show="!show">{{item.name}}</span>
-      <el-input v-model="input2" placeholder="请输入内容" v-show="item.sta"></el-input>
-      <el-button @click="updata(index)">修改</el-button>
-      <el-button @click="del(index)" v-show="!show">删除</el-button>
-      <el-button @click="save(index)" v-show="show">保存</el-button>
-      </el-row>
+  <div class="content">
+    
   </div>
 </template>
 <script>
