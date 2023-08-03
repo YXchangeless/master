@@ -6,7 +6,6 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -15,6 +14,15 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    proxyTable: { 
+      '/api': {  //使用"/api"来代替"http://f.apiplus.c" 
+        target: 'https://www.fastmock.site/mock/69fdb9c588cfb3e4f3d5a12804458003/', //源地址 
+        changeOrigin: true, //改变源 
+        pathRewrite: { 
+          '^/api': 'http://localhost:8080' //路径重写 
+          } 
+      } 
+    },
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

@@ -32,9 +32,9 @@
               <i class="el-icon-user-solid"></i>
               <span>组件库</span>
             </template>
-            <el-menu-item index="/lifeCycle">Vue 生命周期</el-menu-item>
+            <el-menu-item index="/Echarts">Echarts图表库</el-menu-item>
+            <el-menu-item index="/lifeCycle">Echarts地图</el-menu-item>
             <el-menu-item index="/User">Vue实例</el-menu-item>
-            <el-menu-item index="/Echarts">Echarts库</el-menu-item>
             <el-menu-item index="/VueX">VUEX</el-menu-item>
             <el-menu-item index="/Index">requset</el-menu-item>
           </el-submenu>
