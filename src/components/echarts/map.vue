@@ -207,8 +207,8 @@ export default {
             color: "#FFFFFF",
             fontWeight: 400,
             fontFamily: "Source Han Sans CN",
-            fontSize: 36,
-            lineHeight: 80,
+            fontSize: 12,
+            lineHeight: 20,
           },
           position: function (point, params, dom, rect, size) {
             dom.style.transform = 'translateZ(0)'
@@ -217,9 +217,9 @@ export default {
             if (params.seriesType == "scatter" && (params.data.type == '常规水电' || params.data.type == '抽蓄' || params.data.type == '风电')) {
               return `
                 <span style='display:block; background:${params.data.type == '常规水电' ? '#081CF2' : params.data.type == '抽蓄' ? '#08E5F7' : params.data.type == '风电' ? '#08F521' : ''
-                }; border-radius:50%; width:0.7em; left:20px;top:35px;height:0.7em; position:absolute;'></span>
-                <div style='width:600px;margin-left:50px'>
-                  <span style='color:#fff;width:600px;border:1px;max-width: 600px;white-space:pre-wrap;'>${params.data.name || ""
+                }; border-radius:50%; width:10px; left:20px;top:35px;height:10px; position:absolute;'></span>
+                <div style='width:200px;margin-left:50px'>
+                  <span style='color:#fff;width:100px;border:1px;max-width: 100px;white-space:pre-wrap;'>${params.data.name || ""
                 }</span><br/>
                   <span style='color:#fff'>类型：${params.data.type || ""
                 }</span><br/>
@@ -233,8 +233,8 @@ export default {
             if (params.seriesType == "scatter" && params.data.type == '光伏') {
               return `
                 <span style='display:block; background:#F0CB21; border-radius:50%; width:0.7em; left:20px;top:35px;height:0.7em; position:absolute;'></span>
-                <div style='width:600px;margin-left:50px'>
-                  <span style='color:#fff;width:600px;border:1px;max-width: 600px;white-space:pre-wrap;'>${params.data.name || ""
+                <div style='width:200px;margin-left:50px'>
+                  <span style='color:#fff;width:200px;border:1px;max-width: 200px;white-space:pre-wrap;'>${params.data.name || ""
                 }</span><br/>
                   <span style='color:#fff'>类型：${params.data.type || ""
                 }</span><br/>
@@ -248,8 +248,8 @@ export default {
             if (params.seriesType == "scatter" && params.data.type == '核电') {
               return `
                 <span style='display:block; background:#F5A70D; border-radius:50%; width:0.7em; left:20px;top:35px;height:0.7em; position:absolute;'></span>
-                <div style='width:600px;margin-left:50px'>
-                  <span style='color:#fff;width:600px;border:1px;max-width: 600px;white-space:pre-wrap;'>${params.data.name || ""
+                <div style='width:200px;margin-left:50px'>
+                  <span style='color:#fff;width:200px;border:1px;max-width: 200px;white-space:pre-wrap;'>${params.data.name || ""
                 }</span><br/>
                   <span style='color:#fff'>类型：${params.data.type || ""
                 }</span><br/>
