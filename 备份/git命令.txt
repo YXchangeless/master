@@ -1,0 +1,31 @@
+git pull
+git commit
+git status
+git add .
+git commit -m "修改密码button间距"
+git push origin master
+
+
+
+命令解释
+git branch bugFix                         在主分支上上创建bugFix分支
+git checkout test-yj                     切换到bugFix分支上
+git checkout -b test-yj               在主分支上创建bugFix分支，并切换到bugFix分支上
+git push origin test-yj               命令将本地的修改推送到远程服务器上（就可以在服务器上看到创建的新分支）
+git push --set-upstream origin test-yj          设置本地分支追踪远程分支，之后就可以直接使用git push提交代码
+git push -u  origin test-yj
+git merge test                            (在test-yj分支下)将test分支合并到test-yj分支上
+
+git reset --hard  复制的commit id     回退版本
+
+git push -f                                    强制提交
+git fetch -p                                   同步远程分支
+
+git push --set-upstream origin features-REQ-2624-yaojie-20220215
+
+git push origin --delete test-yj   删除远程分支
+
+git branch -D test-yj    删除本地分支
+
+
+
