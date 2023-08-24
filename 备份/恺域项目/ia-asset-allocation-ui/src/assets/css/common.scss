@@ -1,0 +1,633 @@
+html,
+body {
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  background-color: #f2f2f2;;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  /*让字体更润滑*/
+  -moz-osx-font-smoothing: grayscale;
+  /*让字体更润滑*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*禁止链接高亮*/
+  -webkit-touch-callout: none;
+  /*禁止链接长按弹出选项*/
+  color: #FFFFFF;
+}
+
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  color: #4B556A;
+}
+
+input,
+button {
+  border: 0 none;
+  border-radius: 0px;
+  outline: none;
+}
+
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+button,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+table {
+  font-size: inherit;
+}
+
+input,
+select {
+  font-family: arial, helvetica, clean, sans-serif;
+  font-size: 100%;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+
+button {
+  overflow: visible;
+}
+
+th,
+em,
+strong,
+b,
+address,
+cite {
+  font-style: normal;
+  font-weight: normal;
+}
+
+li {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+img,
+fieldset {
+  border: 0 none;
+}
+
+ins {
+  text-decoration: none;
+}
+
+
+/* 清除浮动 */
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.h40 {
+  height: 40px;
+}
+
+.h50 {
+  height: 50px;
+}
+
+/*滚动条样式开始*/
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  /* box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2); */
+  background: #DCDFE6;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  /*滚动条里面轨道*/
+  background: #fff;
+}
+
+// 滚动条样式结束
+
+/*滚动条样式结束*/
+.title-bar {
+  height: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  box-sizing: border-box;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #4B556A;
+  border-bottom: 1px solid #DBDCDC;
+  line-height: 50px;
+  background: #ffffff;
+  margin-bottom: 15px;
+}
+
+.title-bar > span {
+  width: 4px;
+  height: 14px;
+  float: left;
+  margin-top: 18px;
+  margin-right: 8px;
+  background: url('../Images/region.png');
+}
+
+/*  查询条件开始 */
+.conditionFilter {
+  .el-form-item__label, .el-form-item__content {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .el-input--suffix {
+    .el-input__inner {
+      padding-right: 30px;
+      width: 220px;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: top;
+      border: 1px solid #dbdcdc;
+    }
+
+    .el-input__icon {
+      line-height: 32px;
+    }
+  }
+
+  .el-form-item.is-error .el-input__inner {
+    border: 1px solid #cc3d3d;
+  }
+
+  .query {
+    .el-button + .el-button {
+      margin-left: 20px;
+    }
+  }
+
+}
+
+/*查询条件结束*/
+//表格样式开始
+
+//解决表格边框有错位现象
+body .el-table th.gutter {
+  display: table-cell !important;
+}
+
+//body .el-table colgroup.gutter {
+//  display: table-cell !important;
+//}
+
+body .el-table .gutter {
+  display: none !important;
+  width: 0
+}
+
+// table样式2开始
+.table {
+  position: relative;
+  // 无数据时显示图片
+  .el-table__empty-text {
+    line-height: 0;
+    padding: 20px 0;
+  }
+
+  .el-table {
+    z-index: 9;
+    border-collapse: collapse;
+
+    &::before {
+      height: 0px;
+    }
+
+    tr {
+
+      th, td {
+        padding: 0;
+        height: 40px;
+
+        .handleColor {
+          span {
+            color: #2a76cd;
+            padding: 0 10px;
+            cursor: pointer;
+            line-height: 38px;
+            display: inline-block;
+          }
+
+          span:hover {
+            background-color: #eaf1fa;
+          }
+
+          .del {
+            color: #fd5757
+          }
+
+        }
+      }
+
+      th {
+        font-weight: 600;
+        opacity: 0.7;
+        color: #3C4455;
+        background: #F3F4F6;
+      }
+
+      td {
+        .el-button--small {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(-webkit-max-device-pixel-ratio: 1) {
+  .table {
+
+    .el-table {
+      border-left: 1px solid #dbdcdc !important;
+      border-bottom: 1px solid #dbdcdc !important;
+      border-top: 1px solid #dbdcdc !important;
+      border-right: 1px solid #dbdcdc !important;
+
+      tr {
+
+        th, td {
+          border-right: 1px solid #dbdcdc;
+          border-bottom: 1px solid #dbdcdc;
+        }
+
+        //th:last-child, td:last-child{
+        //  border-right: none;
+        //}
+      }
+    }
+
+  }
+}
+
+@media screen and (-webkit-max-device-pixel-ratio: 2) {
+  .table {
+
+    .el-table {
+      border-left: 0.5px solid #dbdcdc !important;
+      border-bottom: 0.5px solid #dbdcdc !important;
+      border-top: 0.5px solid #dbdcdc !important;
+      position: relative;
+      border-right: 0.5px solid #dbdcdc !important;
+      //.el-table__row {
+      //  td:not(.is-hidden):last-child {
+      //    border-left: 1px solid #dbdcdc;
+      //  }
+      //}
+      //&::before {
+      //  content: "";
+      //  box-sizing: border-box;
+      //  position: absolute;
+      //  left: 0;
+      //  bottom: 0;
+      //  width: 100%;
+      //  height: 0.5px;
+      //  background: #dbdcdc;
+      //  z-index: 9;
+      //}
+      //&::after {
+      //  content: "";
+      //  box-sizing: border-box;
+      //  position: absolute;
+      //  top: 0;
+      //  right: 0;
+      //  width: 0.5px;
+      //  height: 100%;
+      //  background: #dbdcdc;
+      //  z-index: 9;
+      //}
+
+
+      tr {
+
+        th, td {
+          border-right: 0.5px solid #dbdcdc;
+          border-bottom: 0.5px solid #dbdcdc;
+        }
+
+        //th:last-child, td:last-child {
+        //  border-right: none;
+        //}
+      }
+    }
+
+  }
+}
+
+// table样式2结束
+
+//.table {
+//  position: relative;
+//  // 无数据时显示图片
+//  .el-table__empty-text {
+//    line-height: 0;
+//    padding: 20px 0;
+//  }
+//
+//  // 无数据时显示图片结束
+//
+//  &::after {
+//    content: "";
+//    box-sizing: border-box;
+//    position: absolute;
+//    right: 0;
+//    top: 0;
+//    width: 1px;
+//    height: 100%;
+//    background: #dbdcdc;
+//    z-index: 9;
+//  }
+//
+//  .el-table {
+//    border-left: 1px solid #dbdcdc !important;
+//    //border-right: 1px solid #dbdcdc !important;
+//    z-index: 9;
+//
+//    .el-table__header {
+//      &::after {
+//        content: "";
+//        box-sizing: border-box;
+//        position: absolute;
+//        left: 0;
+//        top: 0;
+//        width: 100%;
+//        height: 1px;
+//        background: #dbdcdc;
+//        z-index: 9;
+//      }
+//    }
+//
+//    &::before {
+//      content: "";
+//      box-sizing: border-box;
+//      position: absolute;
+//      left: 0;
+//      bottom: 0;
+//      width: 100%;
+//      height: 1px;
+//      background: #dbdcdc;
+//      z-index: 9;
+//    }
+//  }
+//
+//  tr {
+//
+//    th, td {
+//      padding: 0;
+//      height: 40px;
+//      border-right: 1px solid #dbdcdc;
+//      border-bottom: 1px solid #dbdcdc;
+//
+//      .handleColor {
+//        span {
+//          color: #2a76cd;
+//          padding: 0 10px;
+//          cursor: pointer;
+//          line-height: 38px;
+//          display: inline-block;
+//        }
+//
+//        span:hover {
+//          background-color: #eaf1fa;
+//        }
+//
+//        .del {
+//          color: #fd5757
+//        }
+//
+//      }
+//    }
+//
+//    th.is-leaf {
+//      border-bottom: 1px solid #dbdcdc;
+//    }
+//
+//    th {
+//      font-weight: 600;
+//      opacity: 0.7;
+//      color: #3C4455;
+//      background: #F3F4F6;
+//      box-shadow: 0px 1px 0px 0px #DBDCDC;
+//    }
+//
+//    td {
+//      .el-button--small {
+//        font-size: 12px;
+//      }
+//    }
+//  }
+//}
+//
+//@media (-webkit-min-device-pixel-ratio: 1.5) {
+//  .table {
+//    &::after {
+//      width: 0.5px;
+//    }
+//
+//    .el-table {
+//      border-left: 0.5px solid #dbdcdc !important;
+//      //border-right: 0.5px solid #dbdcdc !important;
+//
+//      .el-table__header {
+//        &::after {
+//          height: 0.5px;
+//        }
+//      }
+//
+//      &::before {
+//        height: 0.5px;
+//      }
+//    }
+//
+//    tr {
+//      th, td {
+//        border-right: 0.5px solid #dbdcdc !important;
+//        border-bottom: 0.5px solid #dbdcdc !important;
+//      }
+//    }
+//  }
+//}
+//
+//@media (-webkit-min-device-pixel-ratio: 2) {
+//  .table {
+//    &::after {
+//      width: 0.5px;
+//    }
+//
+//    .el-table {
+//      border-left: 0.5px solid #dbdcdc !important;
+//      border-right: 0.5px solid #dbdcdc !important;
+//
+//      .el-table__header {
+//        &::after {
+//          height: 0.5px;
+//        }
+//      }
+//
+//      &::before {
+//        height: 0.5px;
+//      }
+//    }
+//
+//    tr {
+//      th, td {
+//        border-right: 0.5px solid #dbdcdc !important;
+//        border-bottom: 0.5px solid #dbdcdc !important;
+//      }
+//    }
+//  }
+//}
+
+//表格样式结束
+
+//分页样式开始
+.pageBox {
+  margin-top: 10px;
+  text-align: right;
+
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background: #2a76cd;
+    color: #fff;
+  }
+
+  .el-input--mini {
+    .el-input__inner, .el-input__icon {
+      line-height: 22px;
+      height: 22px;
+    }
+  }
+
+  .el-pagination__jump {
+    .el-input__inner {
+      line-height: 22px;
+      height: 22px;
+    }
+  }
+
+  .el-pager li {
+    line-height: 22px;
+    height: 22px;
+    min-width: 26px !important;
+  }
+
+  .btn-next {
+    min-width: 26px !important;
+  }
+
+  .el-pagination span:not([class*=suffix]), .el-pagination button {
+    height: 22px;
+    line-height: 22px;
+  }
+
+  .el-pagination__total, .el-pagination__sizes {
+    float: left
+  }
+}
+
+//分页样式结束
+
+// 查询重置按钮样式开始
+.buttonCenter {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+
+// 查询重置按钮结束
+//button按钮字体开始
+.el-button {
+  font-family: PingFangSC-Regular
+}
+
+//button按钮字体结束
+// 单位和新增开始
+.unit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #606266;
+
+  .el-button {
+    height: 28px;
+
+    span {
+      margin-left: 5px
+    }
+  }
+}
+
+.btnSize {
+  height: 32px;
+}
+
+.el-button--small {
+  font-size: 14px;
+}
+
+// 单位和新增结束
