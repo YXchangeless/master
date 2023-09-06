@@ -9,20 +9,23 @@ export default new Vuex.Store({
     },
     mutations: {
       changeValue(state,newVal){
-        console.log(state.collapse + '11111111')
         state.collapse = newVal
-        console.log(newVal + '2222')
       },
-        add(state) {
-          state.count++
-        },
-        sub(state){
-          state.difference--
-        }
+      add(state) {
+        state.count++
+      },
+      sub(state){
+        state.difference--
+      }
     },
     // mutations:{
     //   changeValue(state,newVal){
     //   state.value=newVal
     //   }
-    actions: {}
+    // },
+    actions: {
+      add(context) {
+        return context.commit('add')
+      }
+    }
   })
